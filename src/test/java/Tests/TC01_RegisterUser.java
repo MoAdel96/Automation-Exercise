@@ -23,7 +23,7 @@ import static DriverFactory.DriverFactory.*;
 public class TC01_RegisterUser {
 
     private final String Name = DataUtils.getData("dynamicData","validLoginTest.Name")+ Utility.getTimeStamp();
-    private final String Email = DataUtils.getData("dynamicData","validLoginTest.Email")+ Utility.getTimeStamp();
+    private final String Email = DataUtils.getData("dynamicData","validLoginTest.Email")+ Utility.getTimeStamp()+"@gmail.com";
 
     @BeforeMethod
     public void setup(){
@@ -51,8 +51,8 @@ public class TC01_RegisterUser {
     //Todo: enter Name And Email
     @Test
     public void enterNameAndEmail(){
-        new P02_LoginPage(getDriver()).wait().enterEmail(Email).enterName(Name).clickOnSignupButton();
-
+        new P02_LoginPage(getDriver()).enterEmail(Email).enterName(Name).clickOnSignupButton();
+       // new P01_HomePage(getDriver()).clickOnLoginButton().enterEmail(Email).enterName(Name).clickOnSignupButton();
         Assert.assertTrue(new P02_LoginPage(getDriver()).assertSignupPage(DataUtils.getJsonData("environment","Signup_URL")));
     }
 

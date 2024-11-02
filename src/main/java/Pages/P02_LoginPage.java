@@ -20,7 +20,7 @@ public class P02_LoginPage {
         return this;
     }
     public P02_LoginPage enterEmail (String emailText){
-        Utility.sendData(driver,Name,emailText);
+        Utility.sendData(driver,Email,emailText);
         return this;
     }
     public P03_SignupPage clickOnSignupButton (){
