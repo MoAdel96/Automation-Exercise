@@ -2,6 +2,7 @@ package Utilities;
 
 import com.google.gson.JsonElement;
 import com.google.gson.JsonParser;
+import com.jayway.jsonpath.JsonPath;
 import io.qameta.allure.internal.shadowed.jackson.databind.JsonNode;
 import io.qameta.allure.internal.shadowed.jackson.databind.ObjectMapper;
 
@@ -39,14 +40,12 @@ public class DataUtils {
     }
 
     //TODO: get Dynamic data from same parameter from Json file
-    public static JsonNode getTestData(String testCaseName) throws IOException {
-        File jsonFile = new File("src/test/resources/TestData/dynamicLogin.json");
-        JsonNode rootNode = Mapper.readTree(jsonFile);
-        JsonNode testCaseNode = rootNode.path(testCaseName);
-
-        if (testCaseNode.isMissingNode()) {
-            throw new IOException("Test case data not found for: " + testCaseName);
+    public static String getData(String fileName, String field){
+        try{
+            File jsonFile = new File(TEST_DATA_PATH+ fileName+ ".json");
+            return JsonPath.parse(jsonFile).read("$."+field);} catch (Exception e) {
+            e.printStackTrace();
+        }return "";
         }
-        return testCaseNode;
     }
-}
+

@@ -1,0 +1,11 @@
+{
+  "validLoginTest": {
+    "Name": "Test-",
+    "Email": "Test-"
+  },
+  "inValidLoginTest": {
+    "Name": "wrongUser",
+    "Email": "wrongPass"
+  }
+}
+
