@@ -4,6 +4,7 @@ import com.assertthat.selenium_shutterbug.core.Capture;
 import com.assertthat.selenium_shutterbug.core.Shutterbug;
 import io.qameta.allure.Allure;
 import org.apache.commons.io.FileUtils;
+import org.apache.commons.lang3.RandomStringUtils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
@@ -144,15 +145,13 @@ public class Utility {
         return driver.manage().getCookies();
     }
 
-//    // Method to select an option by visible text
-//    public static void selectOptionByText(String dropdownCssSelector,String category) {
-//        $(dropdownCssSelector).selectOption(category);
-//    }
-//
-//    // Method to select an option by value
-//    public static void selectOptionByValue(String dropdownCssSelector,String value) {
-//        $(dropdownCssSelector).selectOptionByValue(value);
-//    }
+
+    // Generates a random 10-digit mobile number with a specific starting prefix
+        public static String generateMobileNumber() {
+        String prefix = "010"; // Adjust based on your region's valid prefix
+        String randomDigits = RandomStringUtils.randomNumeric(7);
+        return prefix + randomDigits;
+    }
 }
 
 

@@ -18,9 +18,10 @@ import static DriverFactory.DriverFactory.*;
 
 public class TC01_RegisterUser {
 
-    //to Get dynamic Credential from json file
-    String name = DataUtils.getData("dynamicTestData", "signupN&E.Name") + Utility.getTimeStamp();
-    String email = DataUtils.getData("dynamicTestData", "signupN&E.Email") + Utility.getTimeStamp() + "@gmail.com";
+    //to Get dynamic Credential from json file:
+    String name = DataUtils.getData("dynamicData", "signupN&E.Name") + Utility.getTimeStamp();
+    String email = DataUtils.getData("dynamicData", "signupN&E.Email") + Utility.getTimeStamp() + "@gmail.com";
+
 
 
     @BeforeMethod
@@ -101,10 +102,45 @@ public class TC01_RegisterUser {
 
     }
 
+    @Test
+    public void FillingAddressInfo() {
+        //TODO: Entering name and Email
+        new P01_HomePage(getDriver())
+                .clickOnSignUpLoginButton().enterName(name).enterEmail(email).clickOnSignUpButton();
+        //TODO: Filling Address Info
+        new P03_SignupPage(getDriver()).enterFirstName()
+                .enterLastName().enterCompany().enterAddress().enterAddress2().selectCountry().enterState().enterCity().enterZipCode();
+        //TODO: Generate dynamic mobile number
+        String dynamicMobileNumber = Utility.generateMobileNumber();
 
-        @AfterMethod
-        public void quit () throws IOException {
-        quitDriver();
-}
+        //TODO: Enter dynamic mobile number in registration form
+        new P03_SignupPage(getDriver()).enterMobileNumber(dynamicMobileNumber);
+
+        //TODO: Click on Create Button
+        new P03_SignupPage(getDriver()).ClickOnCreateButton();
+
+
+    }
+
+//    @Test
+//    public void testEnterDynamicMobileNumber() {
+//
+//        //TODO: Entering name and Email
+//        new P01_HomePage(getDriver())
+//                .clickOnSignUpLoginButton().enterName(name).enterEmail(email).clickOnSignUpButton();
+//        //TODO: Generate dynamic mobile number
+//        String dynamicMobileNumber = Utility.generateMobileNumber();
+//
+//        //TODO: Enter dynamic mobile number in registration form
+//        new P03_SignupPage(getDriver()).enterMobileNumber(dynamicMobileNumber);
+//
+//
+//    }
+
+
+//        @AfterMethod
+//        public void quit () throws IOException {
+//        quitDriver();
+//}
 }
 
