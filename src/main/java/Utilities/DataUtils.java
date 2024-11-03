@@ -46,6 +46,6 @@ public class DataUtils {
             return JsonPath.parse(jsonFile).read("$."+field);} catch (Exception e) {
             e.printStackTrace();
         }return "";
-        }
     }
+}
 

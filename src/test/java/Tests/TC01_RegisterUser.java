@@ -1,17 +1,14 @@
 package Tests;
 
-import DriverFactory.DriverFactory;
 import Pages.P01_HomePage;
 import Pages.P02_LoginPage;
+import Pages.P03_SignupPage;
 import Utilities.DataUtils;
 import Utilities.LogsUtils;
 import Utilities.Utility;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Listeners;
-import Listeners.ITestResultListenerClass;
-import Listeners.IInvokedMethodListenerClass;
 import org.testng.annotations.Test;
 
 import java.io.IOException;
@@ -19,53 +16,95 @@ import java.time.Duration;
 
 import static DriverFactory.DriverFactory.*;
 
-@Listeners({ITestResultListenerClass.class, IInvokedMethodListenerClass.class})
 public class TC01_RegisterUser {
 
-    private final String Name = DataUtils.getData("dynamicData","validLoginTest.Name")+ Utility.getTimeStamp();
-    private final String Email = DataUtils.getData("dynamicData","validLoginTest.Email")+ Utility.getTimeStamp()+"@gmail.com";
+    //to Get dynamic Credential from json file
+    String name = DataUtils.getData("dynamicTestData", "signupN&E.Name") + Utility.getTimeStamp();
+    String email = DataUtils.getData("dynamicTestData", "signupN&E.Email") + Utility.getTimeStamp() + "@gmail.com";
+
 
     @BeforeMethod
-    public void setup(){
-        DriverFactory.setupDriver(DataUtils.getJsonData("environment","Browser"));
-        LogsUtils.info("Browser was Opened");
-        getDriver().get(DataUtils.getJsonData("environment","Home_URL"));
-        LogsUtils.info("Home page was opened");
+    public void setup() throws IOException {
+        setupDriver(DataUtils.getJsonData("environment", "Browser"));
+        LogsUtils.info("Browser was opened");
+        getDriver().get(DataUtils.getJsonData("environment", "HOME_URL"));
+        LogsUtils.info(" Browser is redirected to the HOME URL");
         getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+
     }
 
-    //Todo: Verifying Opening Home page
+
     @Test
-    public void verifyOpeningHomepage (){
-        Assert.assertTrue(new P01_HomePage(getDriver()).verifyHomePage(DataUtils.getJsonData("environment","Home_URL")));
-
+    public void openHomePage() {
+        //TODO:Go to home page
+        new P01_HomePage(getDriver());
+        //TODO:Verify that home page is visible successfully
+        Assert.assertTrue(new P01_HomePage(getDriver()).isLogoVisible());
+        LogsUtils.info("Home page is opened successfully");
     }
-    //Todo: Verifying Opening Login page
+
     @Test
-    public void clickOnLoginButton(){
-        new P01_HomePage(getDriver()).clickOnLoginButton();
-
-        Assert.assertTrue(new P01_HomePage(getDriver()).NewUserSignupIsVisiable());
-
+    public void openSignupPage() {
+        //TODO:Go to signup page
+        new P01_HomePage(getDriver()).clickOnSignUpLoginButton();
+        //TODO:Verify that signup page is visible successfully
+        Assert.assertTrue(new P01_HomePage(getDriver())
+                .assertSignUpTC(DataUtils.getJsonData("environment", "LOGIN_URL")));
+        LogsUtils.info("Signup page is opened successfully");
     }
-    //Todo: enter Name And Email
+
     @Test
-    public void enterNameAndEmail(){
-        new P02_LoginPage(getDriver()).enterEmail(Email).enterName(Name).clickOnSignupButton();
-       // new P01_HomePage(getDriver()).clickOnLoginButton().enterEmail(Email).enterName(Name).clickOnSignupButton();
-        Assert.assertTrue(new P02_LoginPage(getDriver()).assertSignupPage(DataUtils.getJsonData("environment","Signup_URL")));
+    public void FillingSignupFields() {
+        //TODO:Go to signup page
+        new P01_HomePage(getDriver()).clickOnSignUpLoginButton();
+        //TODO: Entering name and Email and click on signup button
+        new P02_LoginPage(getDriver()).enterName(name).enterEmail(email).clickOnSignUpButton();
+
+        LogsUtils.info(getDriver().getCurrentUrl());
+
+        Assert.assertTrue(new P03_SignupPage(getDriver()).accountInfoTextIsDisplayed());
+
+        LogsUtils.info("assertion is done");
+    }
+
+    @Test
+    public void FillingAccInfo() {
+        //TODO: Entering name and Email
+        new P01_HomePage(getDriver())
+                .clickOnSignUpLoginButton().enterName(name).enterEmail(email).clickOnSignUpButton();
+        //TODO : Filling Account Information
+        new P03_SignupPage(getDriver()).selectDay().selectMonth().selectYear().enterPassword().enterTitleMr();
+
+    }
+
+    @Test
+    public void ClickOnNewsLetterCheckBox() {
+        //TODO: Entering name and Email
+        new P01_HomePage(getDriver())
+                .clickOnSignUpLoginButton().enterName(name).enterEmail(email).clickOnSignUpButton();
+        //TODO: Click On NewsLetter CheckBox
+        new P03_SignupPage(getDriver()).clickOnNewsLetterCheckBox();
+        Assert.assertTrue(new P03_SignupPage(getDriver()).verifyingNewsLetterCheckBoxIsSelected());
+        LogsUtils.info("NewsLetter Check Box Is Selected");
+
+    }
+
+    @Test
+    public void ClickOnSpecialOffersCheckBox() {
+        //TODO: Entering name and Email
+        new P01_HomePage(getDriver())
+                .clickOnSignUpLoginButton().enterName(name).enterEmail(email).clickOnSignUpButton();
+        //TODO: Click On NewsLetter CheckBox
+        new P03_SignupPage(getDriver()).clickOnSpecialOffersCheckBox();
+        Assert.assertTrue(new P03_SignupPage(getDriver()).verifyingSpecialOffersCheckBoxIsSelected());
+        LogsUtils.info("Special Offer Check Box Is Selected");
+
     }
 
 
-
-
-
-
-
-    @AfterMethod
-    public void Quit() throws IOException {
+        @AfterMethod
+        public void quit () throws IOException {
         quitDriver();
-    }
-
-
 }
+}
+

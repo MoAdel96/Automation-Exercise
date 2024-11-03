@@ -1,6 +1,6 @@
 {
   "Browser": "edge",
-  "Home_URL": "https://automationexercise.com/",
-  "Login_URL": "https://automationexercise.com/login",
-  "Signup_URL": "https://automationexercise.com/signup"
+  "HOME_URL": "https://automationexercise.com",
+  "SIGNUP_URL": "https://automationexercise.com/signup",
+  "LOGIN_URL": "https://automationexercise.com/login"
 }

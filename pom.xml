@@ -141,6 +141,12 @@
             <artifactId>json-path</artifactId>
             <version>2.9.0</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/com.codeborne/selenide -->
+        <dependency>
+            <groupId>com.codeborne</groupId>
+            <artifactId>selenide</artifactId>
+            <version>7.5.1</version>
+        </dependency>
 
 
     </dependencies>

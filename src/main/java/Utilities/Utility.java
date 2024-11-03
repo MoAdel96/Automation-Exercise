@@ -16,6 +16,8 @@ import java.text.SimpleDateFormat;
 import java.time.Duration;
 import java.util.*;
 
+import static com.codeborne.selenide.Selenide.$;
+
 public class Utility {
 
     private static final String SCREENSHOTS_PATH = "test-outputs/Screenshots/";
@@ -141,6 +143,16 @@ public class Utility {
     public static Set<Cookie> getAllCookies(WebDriver driver) {
         return driver.manage().getCookies();
     }
+
+//    // Method to select an option by visible text
+//    public static void selectOptionByText(String dropdownCssSelector,String category) {
+//        $(dropdownCssSelector).selectOption(category);
+//    }
+//
+//    // Method to select an option by value
+//    public static void selectOptionByValue(String dropdownCssSelector,String value) {
+//        $(dropdownCssSelector).selectOptionByValue(value);
+//    }
 }
 
 
