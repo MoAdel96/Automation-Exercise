@@ -47,6 +47,7 @@ public class P03_SignupPage {
     public boolean verifyingNewsLetterCheckBoxIsSelected() {
         return driver.findElement(newsLetterBox).isSelected();
     }
+
     public boolean verifyingSpecialOffersCheckBoxIsSelected() {
         return driver.findElement(specialOffersBox).isSelected();
     }
@@ -59,89 +60,99 @@ public class P03_SignupPage {
         return this;
 
     }
+
     public P03_SignupPage enterTitleMrs() {
         Utility.clickingOnElement(driver, titleMrs);
         return this;
 
     }
+
     public P03_SignupPage enterPassword() {
-        Utility.sendData(driver,password, DataUtils.getJsonData("accountInformation","password"));
+        Utility.sendData(driver, password, DataUtils.getJsonData("accountInformation", "password"));
         return this;
 
     }
-    public  P03_SignupPage selectDay(){
-        Utility.selectingFromDropDown(driver,dayDropdown,"24");
+
+    public P03_SignupPage selectDay() {
+        Utility.selectingFromDropDown(driver, dayDropdown, "24");
         return this;
     }
-    public  P03_SignupPage selectMonth(){
-        Utility.selectingFromDropDown(driver,monthDropdown,"April");
+
+    public P03_SignupPage selectMonth() {
+        Utility.selectingFromDropDown(driver, monthDropdown, "April");
         return this;
     }
-    public  P03_SignupPage selectYear(){
-        Utility.selectingFromDropDown(driver,yearDropdown,"1996");
+
+    public P03_SignupPage selectYear() {
+        Utility.selectingFromDropDown(driver, yearDropdown, "1996");
         return this;
     }
-    public P03_SignupPage clickOnNewsLetterCheckBox(){
-        Utility.clickingOnElement(driver,newsLetterBox);
+
+    public P03_SignupPage clickOnNewsLetterCheckBox() {
+        Utility.clickingOnElement(driver, newsLetterBox);
         return this;
     }
-    public P03_SignupPage clickOnSpecialOffersCheckBox(){
-        Utility.clickingOnElement(driver,specialOffersBox);
+
+    public P03_SignupPage clickOnSpecialOffersCheckBox() {
+        Utility.clickingOnElement(driver, specialOffersBox);
         return this;
     }
     //TODO: Entering Address Information :
 
     public P03_SignupPage enterFirstName() {
-        Utility.sendData(driver,FirstName,DataUtils.getJsonData("addressInformation","FirstName")+ Utility.getTimeStamp());
+        Utility.sendData(driver, FirstName, DataUtils.getJsonData("addressInformation", "FirstName") + Utility.getTimeStamp());
         return this;
     }
+
     public P03_SignupPage enterLastName() {
-        Utility.sendData(driver,LastName,DataUtils.getJsonData("addressInformation","LastName")+ Utility.getTimeStamp());
+        Utility.sendData(driver, LastName, DataUtils.getJsonData("addressInformation", "LastName") + Utility.getTimeStamp());
         return this;
     }
+
     public P03_SignupPage enterCompany() {
-        Utility.sendData(driver,Company,DataUtils.getJsonData("addressInformation","Company")+ Utility.getTimeStamp());
+        Utility.sendData(driver, Company, DataUtils.getJsonData("addressInformation", "Company") + Utility.getTimeStamp());
         return this;
     }
+
     public P03_SignupPage enterAddress() {
-        Utility.sendData(driver,Address,DataUtils.getJsonData("addressInformation","Address")+ Utility.getTimeStamp());
+        Utility.sendData(driver, Address, DataUtils.getJsonData("addressInformation", "Address") + Utility.getTimeStamp());
         return this;
     }
+
     public P03_SignupPage enterAddress2() {
-        Utility.sendData(driver,Address2,DataUtils.getJsonData("addressInformation","Address2")+ Utility.getTimeStamp());
+        Utility.sendData(driver, Address2, DataUtils.getJsonData("addressInformation", "Address2") + Utility.getTimeStamp());
         return this;
     }
+
     public P03_SignupPage selectCountry() {
-        Utility.selectingFromDropDown(driver,CountryDropDown,"Canada");
+        Utility.selectingFromDropDown(driver, CountryDropDown, "Canada");
         return this;
     }
+
     public P03_SignupPage enterState() {
-        Utility.sendData(driver,State,DataUtils.getJsonData("addressInformation","State")+ Utility.getTimeStamp());
+        Utility.sendData(driver, State, DataUtils.getJsonData("addressInformation", "State") + Utility.getTimeStamp());
         return this;
     }
+
     public P03_SignupPage enterCity() {
-        Utility.sendData(driver,City,DataUtils.getJsonData("addressInformation","City")+ Utility.getTimeStamp());
+        Utility.sendData(driver, City, DataUtils.getJsonData("addressInformation", "City") + Utility.getTimeStamp());
         return this;
     }
+
     public P03_SignupPage enterZipCode() {
-        Utility.sendData(driver,ZipCode,DataUtils.getJsonData("addressInformation","Zipcode")+ Utility.getTimeStamp());
+        Utility.sendData(driver, ZipCode, DataUtils.getJsonData("addressInformation", "Zipcode") + Utility.getTimeStamp());
         return this;
     }
+
     public P03_SignupPage enterMobileNumber(String mobileNum) {
-        Utility.sendData(driver,MobileNumber,mobileNum);
+        Utility.sendData(driver, MobileNumber, mobileNum);
         return this;
     }
+
     public P04_AccCreatedPage ClickOnCreateButton() {
-        Utility.clickingOnElement(driver,createButton);
+        Utility.clickingOnElement(driver, createButton);
         return new P04_AccCreatedPage(driver);
     }
-
-
-
-
-
-
-
 
 
 }

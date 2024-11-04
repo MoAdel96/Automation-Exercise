@@ -1,15 +1,11 @@
 package Tests;
 
-import Pages.P01_HomePage;
-import Pages.P02_LoginPage;
-import Pages.P03_SignupPage;
+import Pages.*;
 import Utilities.DataUtils;
 import Utilities.LogsUtils;
 import Utilities.Utility;
 import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 import java.io.IOException;
 import java.time.Duration;
@@ -19,14 +15,16 @@ import static DriverFactory.DriverFactory.*;
 public class TC01_RegisterUser {
 
     //to Get dynamic Credential from json file:
-    String name = DataUtils.getData("dynamicData", "signupN&E.Name") + Utility.getTimeStamp();
-    String email = DataUtils.getData("dynamicData", "signupN&E.Email") + Utility.getTimeStamp() + "@gmail.com";
+    String name = DataUtils.getData("dynamicData", "validRegisterTest.Name") + Utility.getTimeStamp();
+    String email = DataUtils.getData("dynamicData", "validRegisterTest.Email") + Utility.getTimeStamp() + "@gmail.com";
 
 
 
-    @BeforeMethod
-    public void setup() throws IOException {
-        setupDriver(DataUtils.getJsonData("environment", "Browser"));
+   @BeforeMethod(alwaysRun = true)
+
+    public void setup() {
+
+    setupDriver(DataUtils.getJsonData("environment", "Browser"));
         LogsUtils.info("Browser was opened");
         getDriver().get(DataUtils.getJsonData("environment", "HOME_URL"));
         LogsUtils.info(" Browser is redirected to the HOME URL");
@@ -59,8 +57,8 @@ public class TC01_RegisterUser {
         //TODO:Go to signup page
         new P01_HomePage(getDriver()).clickOnSignUpLoginButton();
         //TODO: Entering name and Email and click on signup button
-        new P02_LoginPage(getDriver()).enterName(name).enterEmail(email).clickOnSignUpButton();
-
+        new P02_LoginPage(getDriver()).enterName(name).enterSignupEmail(email).clickOnSignUpButton();
+        LogsUtils.info(name);
         LogsUtils.info(getDriver().getCurrentUrl());
 
         Assert.assertTrue(new P03_SignupPage(getDriver()).accountInfoTextIsDisplayed());
@@ -72,7 +70,7 @@ public class TC01_RegisterUser {
     public void FillingAccInfo() {
         //TODO: Entering name and Email
         new P01_HomePage(getDriver())
-                .clickOnSignUpLoginButton().enterName(name).enterEmail(email).clickOnSignUpButton();
+                .clickOnSignUpLoginButton().enterName(name).enterSignupEmail(email).clickOnSignUpButton();
         //TODO : Filling Account Information
         new P03_SignupPage(getDriver()).selectDay().selectMonth().selectYear().enterPassword().enterTitleMr();
 
@@ -82,7 +80,7 @@ public class TC01_RegisterUser {
     public void ClickOnNewsLetterCheckBox() {
         //TODO: Entering name and Email
         new P01_HomePage(getDriver())
-                .clickOnSignUpLoginButton().enterName(name).enterEmail(email).clickOnSignUpButton();
+                .clickOnSignUpLoginButton().enterName(name).enterSignupEmail(email).clickOnSignUpButton();
         //TODO: Click On NewsLetter CheckBox
         new P03_SignupPage(getDriver()).clickOnNewsLetterCheckBox();
         Assert.assertTrue(new P03_SignupPage(getDriver()).verifyingNewsLetterCheckBoxIsSelected());
@@ -94,7 +92,7 @@ public class TC01_RegisterUser {
     public void ClickOnSpecialOffersCheckBox() {
         //TODO: Entering name and Email
         new P01_HomePage(getDriver())
-                .clickOnSignUpLoginButton().enterName(name).enterEmail(email).clickOnSignUpButton();
+                .clickOnSignUpLoginButton().enterName(name).enterSignupEmail(email).clickOnSignUpButton();
         //TODO: Click On NewsLetter CheckBox
         new P03_SignupPage(getDriver()).clickOnSpecialOffersCheckBox();
         Assert.assertTrue(new P03_SignupPage(getDriver()).verifyingSpecialOffersCheckBoxIsSelected());
@@ -106,7 +104,7 @@ public class TC01_RegisterUser {
     public void FillingAddressInfo() {
         //TODO: Entering name and Email
         new P01_HomePage(getDriver())
-                .clickOnSignUpLoginButton().enterName(name).enterEmail(email).clickOnSignUpButton();
+                .clickOnSignUpLoginButton().enterName(name).enterSignupEmail(email).clickOnSignUpButton();
         //TODO: Filling Address Info
         new P03_SignupPage(getDriver()).enterFirstName()
                 .enterLastName().enterCompany().enterAddress().enterAddress2().selectCountry().enterState().enterCity().enterZipCode();
@@ -118,29 +116,101 @@ public class TC01_RegisterUser {
 
         //TODO: Click on Create Button
         new P03_SignupPage(getDriver()).ClickOnCreateButton();
+        LogsUtils.info("current URL is : " +getDriver().getCurrentUrl());
 
+        Assert.assertTrue(new P04_AccCreatedPage(getDriver()).assertionCreatingAccount());
+    }
+
+
+
+    @Test
+    public void ClickOnContinueButton(){
+        //TODO: Entering name and Email
+        new P01_HomePage(getDriver())
+                .clickOnSignUpLoginButton().enterName(name).enterSignupEmail(email).clickOnSignUpButton();
+
+        //TODO : Filling Account Information
+        new P03_SignupPage(getDriver()).selectDay().selectMonth().selectYear().enterPassword().enterTitleMr();
+        //TODO: Click On NewsLetter CheckBox
+        new P03_SignupPage(getDriver()).clickOnNewsLetterCheckBox();
+        LogsUtils.info("NewsLetter Check Box Is Selected");
+        //TODO: Click On NewsLetter CheckBox
+        new P03_SignupPage(getDriver()).clickOnSpecialOffersCheckBox();
+                LogsUtils.info("Special Offer Check Box Is Selected");
+        //TODO: Filling Address Info
+        new P03_SignupPage(getDriver()).enterFirstName()
+                .enterLastName().enterCompany().enterAddress().enterAddress2().selectCountry().enterState().enterCity().enterZipCode();
+        //TODO: Generate dynamic mobile number
+        String dynamicMobileNumber = Utility.generateMobileNumber();
+
+        //TODO: Enter dynamic mobile number in registration form
+        new P03_SignupPage(getDriver()).enterMobileNumber(dynamicMobileNumber);
+
+        //TODO: Click on Create Button
+        new P03_SignupPage(getDriver()).ClickOnCreateButton();
+        LogsUtils.info("current URL is : " +getDriver().getCurrentUrl());
+        //TODO: Click on continue Button
+        new P04_AccCreatedPage(getDriver()).clickOnContinueButton();
+        Assert.assertTrue(new P01_HomePage(getDriver()).assertLoggedInText());
+        LogsUtils.info(new P01_HomePage(getDriver()).LoggedUser());
+    }
+    @Test
+    public void ClickOnDeleteButton(){
+        //TODO: Click on Delete Button
+        new P01_HomePage(getDriver()).ClickOnDeleteButton();
+        Assert.assertTrue(new P05_DeletePage(getDriver()).assertDeleteText());
+        //TODO: Click on continue Button
+        new P05_DeletePage(getDriver()).clickOnContinueButton();
+        Assert.assertTrue(new P05_DeletePage(getDriver()).assertRedirectingToHomePage(getDriver().getCurrentUrl()));
+    }
+    @Test(groups = {"register"})
+    public void RegisterUser(){
+       //TODO: Entering name and Email
+        new P01_HomePage(getDriver())
+                .clickOnSignUpLoginButton().enterName(name).enterSignupEmail(email).clickOnSignUpButton();
+        LogsUtils.info(name);
+        LogsUtils.info(email);
+
+        //TODO : Filling Account Information
+        new P03_SignupPage(getDriver()).selectDay().selectMonth().selectYear().enterPassword().enterTitleMr();
+        //TODO: Click On NewsLetter CheckBox
+        new P03_SignupPage(getDriver()).clickOnNewsLetterCheckBox();
+        LogsUtils.info("NewsLetter Check Box Is Selected");
+        //TODO: Click On NewsLetter CheckBox
+        new P03_SignupPage(getDriver()).clickOnSpecialOffersCheckBox();
+        LogsUtils.info("Special Offer Check Box Is Selected");
+        //TODO: Filling Address Info
+        new P03_SignupPage(getDriver()).enterFirstName()
+                .enterLastName().enterCompany().enterAddress().enterAddress2().selectCountry().enterState().enterCity().enterZipCode();
+        //TODO: Generate dynamic mobile number
+        String dynamicMobileNumber = Utility.generateMobileNumber();
+
+        //TODO: Enter dynamic mobile number in registration form
+        new P03_SignupPage(getDriver()).enterMobileNumber(dynamicMobileNumber);
+
+        //TODO: Click on Create Button
+        new P03_SignupPage(getDriver()).ClickOnCreateButton();
+        LogsUtils.info("current URL is : " +getDriver().getCurrentUrl());
+        //TODO: Click on continue Button
+        new P04_AccCreatedPage(getDriver()).clickOnContinueButton();
+        Assert.assertTrue(new P01_HomePage(getDriver()).assertLoggedInText());
+        LogsUtils.info(new P01_HomePage(getDriver()).LoggedUser());
+        //TODO: Click on Delete Button
+        new P01_HomePage(getDriver()).ClickOnDeleteButton();
+        Assert.assertTrue(new P05_DeletePage(getDriver()).assertDeleteText());
+        //TODO: Click on continue Button
+        new P05_DeletePage(getDriver()).clickOnContinueButton();
+        Assert.assertTrue(new P05_DeletePage(getDriver()).assertRedirectingToHomePage(getDriver().getCurrentUrl()));
 
     }
 
-//    @Test
-//    public void testEnterDynamicMobileNumber() {
-//
-//        //TODO: Entering name and Email
-//        new P01_HomePage(getDriver())
-//                .clickOnSignUpLoginButton().enterName(name).enterEmail(email).clickOnSignUpButton();
-//        //TODO: Generate dynamic mobile number
-//        String dynamicMobileNumber = Utility.generateMobileNumber();
-//
-//        //TODO: Enter dynamic mobile number in registration form
-//        new P03_SignupPage(getDriver()).enterMobileNumber(dynamicMobileNumber);
-//
-//
-//    }
 
 
-//        @AfterMethod
-//        public void quit () throws IOException {
-//        quitDriver();
-//}
+
+
+        @AfterMethod(alwaysRun = true)
+        public void quit () throws IOException {
+        quitDriver();
+}
 }
 
