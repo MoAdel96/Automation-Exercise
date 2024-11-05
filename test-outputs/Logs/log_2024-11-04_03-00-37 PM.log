@@ -1,0 +1,14 @@
+[INFO] 04-11-2024 15:00:37 [main] [Tests.TC01_RegisterUser.setup(TC01_RegisterUser.java:27)] - Browser was opened
+[INFO] 04-11-2024 15:00:43 [main] [Tests.TC01_RegisterUser.setup(TC01_RegisterUser.java:29)] -  Browser is redirected to the HOME URL
+[INFO] 04-11-2024 15:00:43 [main] [Listeners.ITestResultListenerClass.onTestStart(ITestResultListenerClass.java:9)] -  Test Case FillingSignupFields started
+[INFO] 04-11-2024 15:00:53 [main] [Listeners.IInvokedMethodListenerClass.afterInvocation(IInvokedMethodListenerClass.java:35)] -  Test Case FillingSignupFields Failed 
+[INFO] 04-11-2024 15:00:56 [main] [Tests.TC01_RegisterUser.setup(TC01_RegisterUser.java:27)] - Browser was opened
+[INFO] 04-11-2024 15:01:03 [main] [Tests.TC01_RegisterUser.setup(TC01_RegisterUser.java:29)] -  Browser is redirected to the HOME URL
+[INFO] 04-11-2024 15:01:03 [main] [Listeners.ITestResultListenerClass.onTestStart(ITestResultListenerClass.java:9)] -  Test Case openHomePage started
+[INFO] 04-11-2024 15:01:03 [main] [Tests.TC01_RegisterUser.openHomePage(TC01_RegisterUser.java:41)] - Home page is opened successfully
+[INFO] 04-11-2024 15:01:03 [main] [Listeners.ITestResultListenerClass.onTestSuccess(ITestResultListenerClass.java:14)] -  Test Case openHomePage Passed 
+[INFO] 04-11-2024 15:01:06 [main] [Tests.TC01_RegisterUser.setup(TC01_RegisterUser.java:27)] - Browser was opened
+[INFO] 04-11-2024 15:01:09 [main] [Tests.TC01_RegisterUser.setup(TC01_RegisterUser.java:29)] -  Browser is redirected to the HOME URL
+[INFO] 04-11-2024 15:01:09 [main] [Listeners.ITestResultListenerClass.onTestStart(ITestResultListenerClass.java:9)] -  Test Case openSignupPage started
+[INFO] 04-11-2024 15:01:12 [main] [Tests.TC01_RegisterUser.openSignupPage(TC01_RegisterUser.java:51)] - Signup page is opened successfully
+[INFO] 04-11-2024 15:01:12 [main] [Listeners.ITestResultListenerClass.onTestSuccess(ITestResultListenerClass.java:14)] -  Test Case openSignupPage Passed 

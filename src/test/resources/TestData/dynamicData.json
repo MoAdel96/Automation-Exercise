@@ -6,6 +6,10 @@
   "ValidLoginTest": {
     "Password": "Test@123",
     "Email": "Test_2024-11-04-04-47-22PM@gmail.com"
+  },
+  "inValidLoginTest": {
+    "Password": "Test@1234",
+    "Email": "Test_2024-11-04@gmail.com"
   }
 }
 

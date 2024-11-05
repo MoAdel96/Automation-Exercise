@@ -1,0 +1,9 @@
+[INFO] 04-11-2024 14:38:55 [main] [Tests.TC01_RegisterUser.setup(TC01_RegisterUser.java:28)] - Browser was opened
+[INFO] 04-11-2024 14:38:57 [main] [Tests.TC01_RegisterUser.setup(TC01_RegisterUser.java:30)] -  Browser is redirected to the HOME URL
+[INFO] 04-11-2024 14:39:07 [main] [Tests.TC01_RegisterUser.setup(TC01_RegisterUser.java:28)] - Browser was opened
+[INFO] 04-11-2024 14:39:10 [main] [Tests.TC01_RegisterUser.setup(TC01_RegisterUser.java:30)] -  Browser is redirected to the HOME URL
+[INFO] 04-11-2024 14:39:25 [main] [Tests.TC01_RegisterUser.setup(TC01_RegisterUser.java:28)] - Browser was opened
+[INFO] 04-11-2024 14:39:30 [main] [Tests.TC01_RegisterUser.setup(TC01_RegisterUser.java:30)] -  Browser is redirected to the HOME URL
+[INFO] 04-11-2024 14:39:35 [main] [Tests.TC01_RegisterUser.ClickOnNewsLetterCheckBox(TC01_RegisterUser.java:87)] - NewsLetter Check Box Is Selected
+[INFO] 04-11-2024 14:39:39 [main] [Tests.TC01_RegisterUser.setup(TC01_RegisterUser.java:28)] - Browser was opened
+[INFO] 04-11-2024 14:39:42 [main] [Tests.TC01_RegisterUser.setup(TC01_RegisterUser.java:30)] -  Browser is redirected to the HOME URL

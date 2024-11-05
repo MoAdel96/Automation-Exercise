@@ -1,0 +1,6 @@
+[INFO] 04-11-2024 11:01:44 [main] [Tests.TC01_RegisterUser.setup(TC01_RegisterUser.java:31)] - Browser was opened
+[INFO] 04-11-2024 11:01:48 [main] [Tests.TC01_RegisterUser.setup(TC01_RegisterUser.java:33)] -  Browser is redirected to the HOME URL
+[INFO] 04-11-2024 11:01:53 [main] [Tests.TC01_RegisterUser.ClickOnContinueButton(TC01_RegisterUser.java:137)] - NewsLetter Check Box Is Selected
+[INFO] 04-11-2024 11:01:53 [main] [Tests.TC01_RegisterUser.ClickOnContinueButton(TC01_RegisterUser.java:140)] - Special Offer Check Box Is Selected
+[INFO] 04-11-2024 11:01:56 [main] [Tests.TC01_RegisterUser.ClickOnContinueButton(TC01_RegisterUser.java:152)] - current URL is : https://automationexercise.com/account_created
+[INFO] 04-11-2024 11:02:00 [main] [Tests.TC01_RegisterUser.ClickOnContinueButton(TC01_RegisterUser.java:156)] - Logged in as Test_2024-11-04-11-01-40AMTest_2024-11-04-11-01-40AM

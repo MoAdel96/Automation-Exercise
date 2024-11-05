@@ -152,7 +152,7 @@ public class TC01_RegisterUser {
         //TODO: Click on continue Button
         new P04_AccCreatedPage(getDriver()).clickOnContinueButton();
         Assert.assertTrue(new P01_HomePage(getDriver()).assertLoggedInText());
-        LogsUtils.info(new P01_HomePage(getDriver()).LoggedUser());
+        LogsUtils.info(new P01_HomePage(getDriver()).LoggedInfo());
     }
     @Test
     public void ClickOnDeleteButton(){
@@ -194,7 +194,7 @@ public class TC01_RegisterUser {
         //TODO: Click on continue Button
         new P04_AccCreatedPage(getDriver()).clickOnContinueButton();
         Assert.assertTrue(new P01_HomePage(getDriver()).assertLoggedInText());
-        LogsUtils.info(new P01_HomePage(getDriver()).LoggedUser());
+        LogsUtils.info(new P01_HomePage(getDriver()).LoggedInfo());
         //TODO: Click on Delete Button
         new P01_HomePage(getDriver()).ClickOnDeleteButton();
         Assert.assertTrue(new P05_DeletePage(getDriver()).assertDeleteText());

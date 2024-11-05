@@ -1,0 +1,5 @@
+[INFO] 04-11-2024 10:58:10 [main] [Tests.TC01_RegisterUser.setup(TC01_RegisterUser.java:31)] - Browser was opened
+[INFO] 04-11-2024 10:58:15 [main] [Tests.TC01_RegisterUser.setup(TC01_RegisterUser.java:33)] -  Browser is redirected to the HOME URL
+[INFO] 04-11-2024 10:58:19 [main] [Tests.TC01_RegisterUser.FillingSignupFields(TC01_RegisterUser.java:64)] - 2024-11-04-10-58-05AM
+[INFO] 04-11-2024 10:58:19 [main] [Tests.TC01_RegisterUser.FillingSignupFields(TC01_RegisterUser.java:65)] - https://automationexercise.com/signup
+[INFO] 04-11-2024 10:58:19 [main] [Tests.TC01_RegisterUser.FillingSignupFields(TC01_RegisterUser.java:69)] - assertion is done

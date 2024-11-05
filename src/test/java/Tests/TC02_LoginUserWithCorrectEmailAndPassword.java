@@ -43,6 +43,8 @@ public class TC02_LoginUserWithCorrectEmailAndPassword {
         LogsUtils.info("Login page is opened successfully");
         //TODO: enter login credentials
         new P02_LoginPage(getDriver()).enterLoginEmail(email).enterLoginPassword(password).clickOnLoginButton();
+        //TODO:Verify that usr logged in successfully
+        Assert.assertTrue(new P01_HomePage(getDriver()).LoggedInfo().contains("Logged in as"));
     }
 
     @AfterMethod(alwaysRun = true)

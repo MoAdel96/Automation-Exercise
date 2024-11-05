@@ -11,6 +11,7 @@ public class P02_LoginPage {
     private final By loginEmail = By.cssSelector("input[data-qa=\"login-email\"]");
     private final By loginPassword = By.cssSelector("input[data-qa=\"login-password\"]");
     private final By loginButton = By.cssSelector("button[data-qa=\"login-button\"]");
+    private final By invalidCreValidation = By.xpath("//*[text()='Your email or password is incorrect!']");
     private final WebDriver driver;
 
     public P02_LoginPage(WebDriver driver) {
@@ -50,5 +51,9 @@ public class P02_LoginPage {
         return new P01_HomePage(driver);
     }
 
+    //Assertions:
+    public boolean assertInvalidCre() {
+        return driver.findElement(invalidCreValidation).isDisplayed();
+    }
 
 }
