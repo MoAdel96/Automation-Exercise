@@ -1,0 +1,24 @@
+[INFO] 10-11-2024 12:53:13 [main] [Listeners.ITestResultListenerClass.onTestStart(ITestResultListenerClass.java:9)] -  Test Case ClickOnContinueButton started
+[INFO] 10-11-2024 12:53:14 [main] [Listeners.IInvokedMethodListenerClass.afterInvocation(IInvokedMethodListenerClass.java:35)] -  Test Case ClickOnContinueButton Failed 
+[ERROR] 10-11-2024 12:53:14 [main] [Utilities.Utility.takeScreenShot(Utility.java:75)] - Cannot invoke "org.openqa.selenium.TakesScreenshot.getScreenshotAs(org.openqa.selenium.OutputType)" because "driver" is null
+[INFO] 10-11-2024 12:53:14 [main] [Listeners.ITestResultListenerClass.onTestStart(ITestResultListenerClass.java:9)] -  Test Case ClickOnNewsLetterCheckBox started
+[INFO] 10-11-2024 12:53:14 [main] [Listeners.IInvokedMethodListenerClass.afterInvocation(IInvokedMethodListenerClass.java:35)] -  Test Case ClickOnNewsLetterCheckBox Failed 
+[ERROR] 10-11-2024 12:53:14 [main] [Utilities.Utility.takeScreenShot(Utility.java:75)] - Cannot invoke "org.openqa.selenium.TakesScreenshot.getScreenshotAs(org.openqa.selenium.OutputType)" because "driver" is null
+[INFO] 10-11-2024 12:53:14 [main] [Listeners.ITestResultListenerClass.onTestStart(ITestResultListenerClass.java:9)] -  Test Case ClickOnSpecialOffersCheckBox started
+[INFO] 10-11-2024 12:53:14 [main] [Listeners.IInvokedMethodListenerClass.afterInvocation(IInvokedMethodListenerClass.java:35)] -  Test Case ClickOnSpecialOffersCheckBox Failed 
+[ERROR] 10-11-2024 12:53:14 [main] [Utilities.Utility.takeScreenShot(Utility.java:75)] - Cannot invoke "org.openqa.selenium.TakesScreenshot.getScreenshotAs(org.openqa.selenium.OutputType)" because "driver" is null
+[INFO] 10-11-2024 12:53:14 [main] [Listeners.ITestResultListenerClass.onTestStart(ITestResultListenerClass.java:9)] -  Test Case FillingAccInfo started
+[INFO] 10-11-2024 12:53:14 [main] [Listeners.IInvokedMethodListenerClass.afterInvocation(IInvokedMethodListenerClass.java:35)] -  Test Case FillingAccInfo Failed 
+[ERROR] 10-11-2024 12:53:14 [main] [Utilities.Utility.takeScreenShot(Utility.java:75)] - Cannot invoke "org.openqa.selenium.TakesScreenshot.getScreenshotAs(org.openqa.selenium.OutputType)" because "driver" is null
+[INFO] 10-11-2024 12:53:14 [main] [Listeners.ITestResultListenerClass.onTestStart(ITestResultListenerClass.java:9)] -  Test Case FillingAddressInfo started
+[INFO] 10-11-2024 12:53:14 [main] [Listeners.IInvokedMethodListenerClass.afterInvocation(IInvokedMethodListenerClass.java:35)] -  Test Case FillingAddressInfo Failed 
+[ERROR] 10-11-2024 12:53:14 [main] [Utilities.Utility.takeScreenShot(Utility.java:75)] - Cannot invoke "org.openqa.selenium.TakesScreenshot.getScreenshotAs(org.openqa.selenium.OutputType)" because "driver" is null
+[INFO] 10-11-2024 12:53:14 [main] [Listeners.ITestResultListenerClass.onTestStart(ITestResultListenerClass.java:9)] -  Test Case FillingSignupFields started
+[INFO] 10-11-2024 12:53:14 [main] [Listeners.IInvokedMethodListenerClass.afterInvocation(IInvokedMethodListenerClass.java:35)] -  Test Case FillingSignupFields Failed 
+[ERROR] 10-11-2024 12:53:14 [main] [Utilities.Utility.takeScreenShot(Utility.java:75)] - Cannot invoke "org.openqa.selenium.TakesScreenshot.getScreenshotAs(org.openqa.selenium.OutputType)" because "driver" is null
+[INFO] 10-11-2024 12:53:14 [main] [Listeners.ITestResultListenerClass.onTestStart(ITestResultListenerClass.java:9)] -  Test Case openHomePage started
+[INFO] 10-11-2024 12:53:14 [main] [Listeners.IInvokedMethodListenerClass.afterInvocation(IInvokedMethodListenerClass.java:35)] -  Test Case openHomePage Failed 
+[ERROR] 10-11-2024 12:53:14 [main] [Utilities.Utility.takeScreenShot(Utility.java:75)] - Cannot invoke "org.openqa.selenium.TakesScreenshot.getScreenshotAs(org.openqa.selenium.OutputType)" because "driver" is null
+[INFO] 10-11-2024 12:53:14 [main] [Listeners.ITestResultListenerClass.onTestStart(ITestResultListenerClass.java:9)] -  Test Case openSignupPage started
+[INFO] 10-11-2024 12:53:14 [main] [Listeners.IInvokedMethodListenerClass.afterInvocation(IInvokedMethodListenerClass.java:35)] -  Test Case openSignupPage Failed 
+[ERROR] 10-11-2024 12:53:14 [main] [Utilities.Utility.takeScreenShot(Utility.java:75)] - Cannot invoke "org.openqa.selenium.TakesScreenshot.getScreenshotAs(org.openqa.selenium.OutputType)" because "driver" is null

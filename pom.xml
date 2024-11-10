@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.example</groupId>
-    <artifactId>SwagLabsAutomationProject</artifactId>
+    <artifactId>Automation-Exercise</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>
@@ -23,19 +23,17 @@
         <commonIO>2.15.0</commonIO>
 
         <shutterbugversion>1.6</shutterbugversion>
-        <suite.cart>Test Runner/CartSuite.xml</suite.cart>
-        <suite.checkout>Test Runner/CheckoutSuite.xml</suite.checkout>
-        <suite.finishorder>Test Runner/FinishingOrderSuite.xml</suite.finishorder>
-        <suite.landing>Test Runner/LandingSuite.xml</suite.landing>
-        <suite.login>Test Runner/LoginSuite.xml</suite.login>
-        <suite.overview>Test Runner/OverviewSuite.xml</suite.overview>
-        <suite.regression>Test Runner/RegressionSuite.xml</suite.regression>
+
+        <suite.regression>src/Test Runner/TC01_RegisterUser.xml</suite.regression>
+        <aspectj.version>1.9.22.1</aspectj.version>
 
     </properties>
 
     <build>
+
         <directory>test-outputs/target</directory>
         <plugins>
+            <!-- Maven Surefire Plugin Configuration -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
@@ -45,15 +43,28 @@
                         -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
                     </argLine>
                     <suiteXmlFiles>
-                        <suiteXmlFile>
-                            ${suite.regression}
-                        </suiteXmlFile>
+                        <suiteXmlFile>${suite.regression}</suiteXmlFile>
                     </suiteXmlFiles>
                 </configuration>
+            </plugin>
 
+            <!-- Maven Jar Plugin Configuration -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.1.0</version>
+                <configuration>
+                    <classesDirectory>${project.build.testOutputDirectory}</classesDirectory>
+                    <archive>
+                        <manifestEntries>
+                            <Main-Class>Tests.TC01_RegisterUser</Main-Class> <!-- Replace with your main class -->
+                        </manifestEntries>
+                    </archive>
+                </configuration>
             </plugin>
         </plugins>
     </build>
+
     <dependencies>
 
         <!-- https://mvnrepository.com/artifact/com.assertthat/selenium-shutterbug -->
@@ -61,6 +72,13 @@
             <groupId>com.assertthat</groupId>
             <artifactId>selenium-shutterbug</artifactId>
             <version>${shutterbugversion}</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-jar-plugin -->
+        <dependency>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-jar-plugin</artifactId>
+            <version>3.4.2</version>
         </dependency>
 
 
@@ -152,6 +170,13 @@
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
             <version>3.17.0</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.aspectj/aspectjweaver -->
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjweaver</artifactId>
+            <version>${aspectj.version}</version>
+            <scope>runtime</scope>
         </dependency>
 
 

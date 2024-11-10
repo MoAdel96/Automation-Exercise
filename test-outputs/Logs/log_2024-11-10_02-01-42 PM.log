@@ -1,0 +1,10 @@
+[INFO] 10-11-2024 14:01:42 [main] [Tests.TC01_RegisterUser.setup(TC01_RegisterUser.java:29)] - Browser was opened
+[INFO] 10-11-2024 14:01:47 [main] [Tests.TC01_RegisterUser.setup(TC01_RegisterUser.java:31)] -  Browser is redirected to the HOME URL
+[INFO] 10-11-2024 14:01:48 [main] [Listeners.ITestResultListenerClass.onTestStart(ITestResultListenerClass.java:9)] -  Test Case RegisterUser started
+[INFO] 10-11-2024 14:01:52 [main] [Tests.TC01_RegisterUser.RegisterUser(TC01_RegisterUser.java:172)] - Test_2024-11-10-02-01-39PM
+[INFO] 10-11-2024 14:01:52 [main] [Tests.TC01_RegisterUser.RegisterUser(TC01_RegisterUser.java:173)] - Test_2024-11-10-02-01-39PM@gmail.com
+[INFO] 10-11-2024 14:01:53 [main] [Tests.TC01_RegisterUser.RegisterUser(TC01_RegisterUser.java:179)] - NewsLetter Check Box Is Selected
+[INFO] 10-11-2024 14:01:53 [main] [Tests.TC01_RegisterUser.RegisterUser(TC01_RegisterUser.java:182)] - Special Offer Check Box Is Selected
+[INFO] 10-11-2024 14:01:56 [main] [Tests.TC01_RegisterUser.RegisterUser(TC01_RegisterUser.java:194)] - current URL is : https://automationexercise.com/account_created
+[INFO] 10-11-2024 14:01:58 [main] [Tests.TC01_RegisterUser.RegisterUser(TC01_RegisterUser.java:198)] - Logged in as Test_2024-11-10-02-01-39PM
+[INFO] 10-11-2024 14:02:02 [main] [Listeners.ITestResultListenerClass.onTestSuccess(ITestResultListenerClass.java:14)] -  Test Case RegisterUser Passed 

@@ -1,0 +1,42 @@
+[INFO] 10-11-2024 14:09:50 [main] [Tests.TC01_RegisterUser.setup(TC01_RegisterUser.java:29)] - Browser was opened
+[INFO] 10-11-2024 14:09:55 [main] [Tests.TC01_RegisterUser.setup(TC01_RegisterUser.java:31)] -  Browser is redirected to the HOME URL
+[INFO] 10-11-2024 14:09:55 [main] [Listeners.ITestResultListenerClass.onTestStart(ITestResultListenerClass.java:9)] -  Test Case ClickOnContinueButton started
+[INFO] 10-11-2024 14:10:02 [main] [Tests.TC01_RegisterUser.ClickOnContinueButton(TC01_RegisterUser.java:137)] - NewsLetter Check Box Is Selected
+[INFO] 10-11-2024 14:10:02 [main] [Tests.TC01_RegisterUser.ClickOnContinueButton(TC01_RegisterUser.java:140)] - Special Offer Check Box Is Selected
+[INFO] 10-11-2024 14:10:05 [main] [Tests.TC01_RegisterUser.ClickOnContinueButton(TC01_RegisterUser.java:152)] - current URL is : https://automationexercise.com/account_created
+[INFO] 10-11-2024 14:10:08 [main] [Tests.TC01_RegisterUser.ClickOnContinueButton(TC01_RegisterUser.java:156)] - Logged in as Test_2024-11-10-02-09-47PM
+[INFO] 10-11-2024 14:10:08 [main] [Listeners.ITestResultListenerClass.onTestSuccess(ITestResultListenerClass.java:14)] -  Test Case ClickOnContinueButton Passed 
+[INFO] 10-11-2024 14:10:11 [main] [Tests.TC01_RegisterUser.setup(TC01_RegisterUser.java:29)] - Browser was opened
+[INFO] 10-11-2024 14:10:14 [main] [Tests.TC01_RegisterUser.setup(TC01_RegisterUser.java:31)] -  Browser is redirected to the HOME URL
+[INFO] 10-11-2024 14:10:14 [main] [Listeners.ITestResultListenerClass.onTestStart(ITestResultListenerClass.java:9)] -  Test Case ClickOnNewsLetterCheckBox started
+[INFO] 10-11-2024 14:10:28 [main] [Listeners.IInvokedMethodListenerClass.afterInvocation(IInvokedMethodListenerClass.java:35)] -  Test Case ClickOnNewsLetterCheckBox Failed 
+[INFO] 10-11-2024 14:10:31 [main] [Tests.TC01_RegisterUser.setup(TC01_RegisterUser.java:29)] - Browser was opened
+[INFO] 10-11-2024 14:10:35 [main] [Tests.TC01_RegisterUser.setup(TC01_RegisterUser.java:31)] -  Browser is redirected to the HOME URL
+[INFO] 10-11-2024 14:10:35 [main] [Listeners.ITestResultListenerClass.onTestStart(ITestResultListenerClass.java:9)] -  Test Case ClickOnSpecialOffersCheckBox started
+[INFO] 10-11-2024 14:10:50 [main] [Listeners.IInvokedMethodListenerClass.afterInvocation(IInvokedMethodListenerClass.java:35)] -  Test Case ClickOnSpecialOffersCheckBox Failed 
+[INFO] 10-11-2024 14:10:53 [main] [Tests.TC01_RegisterUser.setup(TC01_RegisterUser.java:29)] - Browser was opened
+[INFO] 10-11-2024 14:10:53 [main] [Tests.TC01_RegisterUser.setup(TC01_RegisterUser.java:31)] -  Browser is redirected to the HOME URL
+[INFO] 10-11-2024 14:10:54 [main] [Listeners.ITestResultListenerClass.onTestStart(ITestResultListenerClass.java:9)] -  Test Case FillingAccInfo started
+[INFO] 10-11-2024 14:11:16 [main] [Listeners.IInvokedMethodListenerClass.afterInvocation(IInvokedMethodListenerClass.java:35)] -  Test Case FillingAccInfo Failed 
+[ERROR] 10-11-2024 14:11:16 [main] [Utilities.Utility.takeScreenShot(Utility.java:75)] - disconnected: not connected to DevTools
+  (failed to check if window was closed: disconnected: not connected to DevTools)
+  (Session info: MicrosoftEdge=130.0.2849.68)
+Build info: version: '4.25.0', revision: '8a8aea2337'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '23'
+Driver info: org.openqa.selenium.edge.EdgeDriver
+Command: [0171683eba0764a0632777c85d7dd8ea, screenshot {}]
+Capabilities {acceptInsecureCerts: false, browserName: MicrosoftEdge, browserVersion: 130.0.2849.68, fedcm:accounts: true, ms:edgeOptions: {debuggerAddress: localhost:49202}, msedge: {msedgedriverVersion: 130.0.2849.80 (bbf5e2881b22..., userDataDir: C:\Users\Q\AppData\Local\Te...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:49202/devtoo..., se:cdpVersion: 130.0.2849.68, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 0171683eba0764a0632777c85d7dd8ea
+[INFO] 10-11-2024 14:11:18 [main] [Tests.TC01_RegisterUser.setup(TC01_RegisterUser.java:29)] - Browser was opened
+[INFO] 10-11-2024 14:11:20 [main] [Listeners.IInvokedMethodListenerClass.afterInvocation(IInvokedMethodListenerClass.java:35)] -  Test Case setup Failed 
+[ERROR] 10-11-2024 14:11:20 [main] [Utilities.Utility.takeScreenShot(Utility.java:75)] - no such window: target window already closed
+from unknown error: web view not found
+  (Session info: MicrosoftEdge=130.0.2849.68)
+Build info: version: '4.25.0', revision: '8a8aea2337'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '23'
+Driver info: org.openqa.selenium.edge.EdgeDriver
+Command: [20e46621c90385c148d43d2915622515, screenshot {}]
+Capabilities {acceptInsecureCerts: false, browserName: MicrosoftEdge, browserVersion: 130.0.2849.68, fedcm:accounts: true, ms:edgeOptions: {debuggerAddress: localhost:49264}, msedge: {msedgedriverVersion: 130.0.2849.80 (bbf5e2881b22..., userDataDir: C:\Users\Q\AppData\Local\Te...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:49264/devtoo..., se:cdpVersion: 130.0.2849.68, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 20e46621c90385c148d43d2915622515
+[INFO] 10-11-2024 14:11:20 [main] [Listeners.ITestResultListenerClass.onTestStart(ITestResultListenerClass.java:9)] -  Test Case FillingAddressInfo started
+[INFO] 10-11-2024 14:11:20 [main] [Listeners.ITestResultListenerClass.onTestSkipped(ITestResultListenerClass.java:20)] -  Test Case FillingAddressInfo Skipped 

@@ -11,6 +11,7 @@
         <groups>
             <define name="register"/>
             <run>
+
                 <include name="register"/>
             </run>
         </groups>

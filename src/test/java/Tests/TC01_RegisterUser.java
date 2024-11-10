@@ -22,6 +22,7 @@ public class TC01_RegisterUser {
 
    @BeforeMethod(alwaysRun = true)
 
+
     public void setup() {
 
     setupDriver(DataUtils.getJsonData("environment", "Browser"));
@@ -33,7 +34,7 @@ public class TC01_RegisterUser {
     }
 
 
-    @Test
+    @Test(groups = {"flow"})
     public void openHomePage() {
         //TODO:Go to home page
         new P01_HomePage(getDriver());
@@ -42,7 +43,7 @@ public class TC01_RegisterUser {
         LogsUtils.info("Home page is opened successfully");
     }
 
-    @Test
+    @Test(groups = {"flow"})
     public void openSignupPage() {
         //TODO:Go to signup page
         new P01_HomePage(getDriver()).clickOnSignUpLoginButton();
@@ -52,7 +53,7 @@ public class TC01_RegisterUser {
         LogsUtils.info("Signup page is opened successfully");
     }
 
-    @Test
+    @Test(groups = {"flow"})
     public void FillingSignupFields() {
         //TODO:Go to signup page
         new P01_HomePage(getDriver()).clickOnSignUpLoginButton();
@@ -66,7 +67,7 @@ public class TC01_RegisterUser {
         LogsUtils.info("assertion is done");
     }
 
-    @Test
+    @Test(groups = {"flow"})
     public void FillingAccInfo() {
         //TODO: Entering name and Email
         new P01_HomePage(getDriver())
@@ -76,7 +77,7 @@ public class TC01_RegisterUser {
 
     }
 
-    @Test
+    @Test(groups = {"flow"})
     public void ClickOnNewsLetterCheckBox() {
         //TODO: Entering name and Email
         new P01_HomePage(getDriver())
@@ -88,7 +89,7 @@ public class TC01_RegisterUser {
 
     }
 
-    @Test
+    @Test(groups = {"flow"})
     public void ClickOnSpecialOffersCheckBox() {
         //TODO: Entering name and Email
         new P01_HomePage(getDriver())
@@ -100,7 +101,7 @@ public class TC01_RegisterUser {
 
     }
 
-    @Test
+    @Test(groups = {"flow"})
     public void FillingAddressInfo() {
         //TODO: Entering name and Email
         new P01_HomePage(getDriver())
@@ -123,7 +124,7 @@ public class TC01_RegisterUser {
 
 
 
-    @Test
+    @Test(groups = {"flow"})
     public void ClickOnContinueButton(){
         //TODO: Entering name and Email
         new P01_HomePage(getDriver())
@@ -209,6 +210,7 @@ public class TC01_RegisterUser {
 
 
         @AfterMethod(alwaysRun = true)
+
         public void quit () throws IOException {
         quitDriver();
 }
