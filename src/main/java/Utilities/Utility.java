@@ -6,6 +6,7 @@ import io.qameta.allure.Allure;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.openqa.selenium.*;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -28,6 +29,17 @@ public class Utility {
                 .until(ExpectedConditions.elementToBeClickable(locator));
         driver.findElement(locator).click();
     }
+    public static void hoverOverElement(WebDriver driver, By locator) {
+        // Wait until the element is visible and then perform hover action
+        new WebDriverWait(driver, Duration.ofSeconds(5))
+                .until(ExpectedConditions.visibilityOfElementLocated(locator));
+
+        new Actions(driver)
+                .moveToElement(driver.findElement(locator))
+                .perform(); // Hover over the element
+
+
+    }
 
     public static void sendData(WebDriver driver, By locator, String data) {
         new WebDriverWait(driver, Duration.ofSeconds(5))
@@ -44,6 +56,11 @@ public class Utility {
 
     public static WebDriverWait generalWait(WebDriver driver) {
         return new WebDriverWait(driver, Duration.ofSeconds(5));
+    }
+    public static WebElement waitForLocator(WebDriver driver, By locator) {
+        // Waits until the element located by `locator` is visible and then returns it as a WebElement
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
     }
 
     public static void scrolling(WebDriver driver, By locator) {
