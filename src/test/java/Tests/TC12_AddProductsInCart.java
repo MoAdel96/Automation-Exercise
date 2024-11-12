@@ -200,7 +200,6 @@ public class TC12_AddProductsInCart {
         //Assert opening Products page:
         Assert.assertTrue(new P06_ProductsPage(getDriver())
                 .VerifyNavigatedToALLProductsPage(getDriver().getCurrentUrl()));
-
         //TODO: Hover over first Product:
         new P06_ProductsPage(getDriver()).scrollingToFirstProduct().hoverOverFirstProduct();
         //Assert hovering on the first product:
@@ -240,9 +239,9 @@ public class TC12_AddProductsInCart {
     }
 
 
-//    @AfterMethod(alwaysRun = true)
-//
-//    public void quit() throws IOException {
-//        quitDriver();
-    // }
+    @AfterMethod(alwaysRun = true)
+
+    public void quit() throws IOException {
+        quitDriver();
+     }
 }

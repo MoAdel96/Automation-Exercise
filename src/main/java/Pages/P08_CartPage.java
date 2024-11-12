@@ -1,5 +1,6 @@
 package Pages;
 
+import Utilities.DataUtils;
 import Utilities.Utility;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -66,6 +67,12 @@ public class P08_CartPage {
     public boolean verifySecondProductInfoAreDisplayed() {
         return driver.findElement(secondPrice).isDisplayed()
                 && driver.findElement(secondQuantity).isDisplayed() && driver.findElement(secondToTalPrice).isDisplayed();
+    }
+    public boolean verifyTC13ProductIsDisplayed() {
+        return driver.findElement(firstProduct).isDisplayed();
+    }
+    public boolean verifyTC13ProductQuantity() {
+        return driver.findElement(firstQuantity).getText().equals(DataUtils.getData("dynamicData","productQuantity"));
     }
 
 }
