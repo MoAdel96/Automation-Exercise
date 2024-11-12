@@ -11,6 +11,25 @@
     "Password": "Test@1234",
     "Email": "Test_2024-11-04@gmail.com"
   },
-  "productQuantity": "4"
+  "productQuantity": "4",
+
+
+  "comment":"Hello",
+
+
+  "validPayment": {
+    "name": "mohamed",
+    "cardNum": "1234567891234567",
+    "cvc": "123",
+    "expMonth": "02",
+    "expYear": "2030"
+  },
+  "invalidPayment": {
+    "name": "adel",
+    "cardNum": "1234567891234566",
+    "cvc": "123",
+    "expMonth": "02",
+    "expYear": "2030"
+  }
 }
 

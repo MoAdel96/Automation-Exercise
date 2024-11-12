@@ -59,7 +59,7 @@ public class Utility {
     }
     public static WebElement waitForLocator(WebDriver driver, By locator) {
         // Waits until the element located by `locator` is visible and then returns it as a WebElement
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
     }
 
