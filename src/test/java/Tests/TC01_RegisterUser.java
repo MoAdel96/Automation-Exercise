@@ -180,10 +180,6 @@ public class TC01_RegisterUser {
     @Epic("Web interface")
     @Feature("Register")
     @Story("Authentication")
-
-
-
-
     public void RegisterUser(){
        //TODO: Entering name and Email
         new P01_HomePage(getDriver())
