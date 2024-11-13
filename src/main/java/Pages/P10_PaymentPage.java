@@ -3,7 +3,15 @@ package Pages;
 import Utilities.DataUtils;
 import Utilities.Utility;
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.FluentWait;
+import org.openqa.selenium.support.ui.Wait;
+
+import java.time.Duration;
+
+import static DriverFactory.DriverFactory.getDriver;
 
 public class P10_PaymentPage {
     private final WebDriver driver;
@@ -38,12 +46,18 @@ public class P10_PaymentPage {
         Utility.sendData(driver,expYear, DataUtils.getData("dynamicData","validPayment.expYear"));
         return this;
     }
-    public P10_PaymentPage clickOnPayButton(){
+    public P11_ConfirmPage clickOnPayButton(){
         Utility.clickingOnElement(driver,payButton);
 
-        return new P10_PaymentPage(driver);
+        return new P11_ConfirmPage(driver);
     }
     public P10_PaymentPage locateMsg(){
+        Wait<WebDriver> fluentWait = new FluentWait<>(getDriver())
+                .withTimeout(Duration.ofSeconds(15))
+                .pollingEvery(Duration.ofMillis(500));
+
+         fluentWait.until(driver -> driver.findElement(successMsg));
+
         driver.findElement(successMsg).getText();
 
         return this;
