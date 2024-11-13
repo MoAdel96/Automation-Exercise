@@ -26,6 +26,47 @@ public class P01_HomePage {
         this.driver = driver;
     }
 
+    //TODO:Actions:
+    public P02_LoginPage clickOnSignUpLoginButton() {
+        Utility.clickingOnElement(driver, SignUp_Login_Button);
+
+        return new P02_LoginPage(driver);
+
+    }
+
+    public P05_DeletePage ClickOnDeleteButton() {
+        Utility.clickingOnElement(driver, deleteButton);
+        return new P05_DeletePage(driver);
+    }
+
+    public P06_ProductsPage clickOnProductsButton() {
+        Utility.clickingOnElement(driver, productsButton);
+        return new P06_ProductsPage(driver);
+    }
+
+    public P01_HomePage clickOnWomenCategory() {
+        Utility.clickingOnElement(driver, womenCategory);
+        return new P01_HomePage(driver);
+    }
+
+    public P01_HomePage clickOnDressCategory() {
+        Utility.clickingOnElement(driver, dressCategory);
+        return new P01_HomePage(driver);
+    }
+
+    public P01_HomePage clickOnMenCategory() {
+        Utility.clickingOnElement(driver, menCategory);
+        return new P01_HomePage(driver);
+    }
+
+    public P01_HomePage clickOnTShirtsCategory() {
+        Utility.clickingOnElement(driver, tShirtsCategory);
+        return new P01_HomePage(driver);
+    }
+
+
+    //TODO:Assertions:
+
     public boolean isLogoVisible() {
         try {
             WebElement logoElement = driver.findElement(Logo);
@@ -34,13 +75,6 @@ public class P01_HomePage {
             System.out.println("Logo not found on the page.");
             return false;
         }
-    }
-
-    public P02_LoginPage clickOnSignUpLoginButton() {
-        Utility.clickingOnElement(driver, SignUp_Login_Button);
-
-        return new P02_LoginPage(driver);
-
     }
 
     public Boolean assertSignUpTC(String expectedValue) {
@@ -59,49 +93,16 @@ public class P01_HomePage {
         return loggingText;
     }
 
-
-    public P05_DeletePage ClickOnDeleteButton() {
-        Utility.clickingOnElement(driver, deleteButton);
-        return new P05_DeletePage(driver);
-    }
-
-    public P06_ProductsPage clickOnProductsButton() {
-        Utility.clickingOnElement(driver, productsButton);
-        return new P06_ProductsPage(driver);
-    }
-
     public Boolean assertCategories() {
         return driver.findElement(categories).isDisplayed();
-    }
-
-    public P01_HomePage clickOnWomenCategory() {
-        Utility.clickingOnElement(driver, womenCategory);
-        return new P01_HomePage(driver);
-    }
-
-    public P01_HomePage clickOnDressCategory() {
-        Utility.clickingOnElement(driver, dressCategory);
-        return new P01_HomePage(driver);
     }
 
     public Boolean assertTitleText() {
         return driver.findElement(titleText).isDisplayed();
     }
 
-    public P01_HomePage clickOnMenCategory() {
-        Utility.clickingOnElement(driver, menCategory);
-        return new P01_HomePage(driver);
-    }
-
-    public P01_HomePage clickOnTShirtsCategory() {
-        Utility.clickingOnElement(driver, tShirtsCategory);
-        return new P01_HomePage(driver);
-    }
-
     public boolean verifyUserIsNavigatedToThatCategoryPage(String ExpectedValue) {
         return driver.getCurrentUrl().equals(ExpectedValue);
-
-
     }
 
 

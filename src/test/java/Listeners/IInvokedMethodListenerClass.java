@@ -3,6 +3,8 @@ package Listeners;
 import Utilities.LogsUtils;
 import Utilities.Utility;
 import io.qameta.allure.Allure;
+import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.testng.IInvokedMethod;
 import org.testng.IInvokedMethodListener;
 import org.testng.ITestContext;
@@ -34,7 +36,9 @@ public class IInvokedMethodListenerClass implements IInvokedMethodListener {
         if (testResult.getStatus() == ITestResult.FAILURE) {
             LogsUtils.info(" Test Case " + testResult.getName() + " Failed ");
 
+
             Utility.takeScreenShot(getDriver(), testResult.getName()); //TC-2024-12-05-8-17pm
         }
-    }
-}
+
+
+}}

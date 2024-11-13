@@ -57,6 +57,9 @@ public class Utility {
     public static WebDriverWait generalWait(WebDriver driver) {
         return new WebDriverWait(driver, Duration.ofSeconds(5));
     }
+
+
+
     public static WebElement waitForLocator(WebDriver driver, By locator) {
         // Waits until the element located by `locator` is visible and then returns it as a WebElement
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
@@ -77,6 +80,36 @@ public class Utility {
     }
 
 
+
+
+    public static void selectingFromDropDown(WebDriver driver, By locator, String option) {
+        new Select(findWebElement(driver, locator)).selectByVisibleText(option);
+
+
+    }
+
+    public static void takeFullScreenShot(WebDriver driver, By locator, String screenshotName) {
+        try {
+            // Capture full-page screenshot and highlight the element
+            File screenshotFile = new File(SCREENSHOTS_PATH + screenshotName + "-" + getTimeStamp() + ".png");
+
+            // Capture and highlight using Shutterbug
+            Shutterbug.shootPage(driver, Capture.FULL_SCROLL)
+                    .highlight(findWebElement(driver, locator))
+                    .withName(screenshotFile.getName())
+                    .save(SCREENSHOTS_PATH);
+
+            // Attach the screenshot to Allure
+            Allure.addAttachment(screenshotName, Files.newInputStream(Path.of(screenshotFile.getPath())));
+
+        } catch (Exception e) {
+            LogsUtils.error(e.getMessage());
+        }
+
+    }
+
+
+
     public static void takeScreenShot(WebDriver driver, String screenshotName) {
         try {
             // Capture screenshot using TakesScreenshot
@@ -91,22 +124,6 @@ public class Utility {
         } catch (Exception e) {
             LogsUtils.error(e.getMessage());
         }
-    }
-
-    public static void selectingFromDropDown(WebDriver driver, By locator, String option) {
-        new Select(findWebElement(driver, locator)).selectByVisibleText(option);
-
-
-    }
-
-    public static void takeFullScreenShot(WebDriver driver, By locator) {
-        try {
-            Shutterbug.shootPage(driver, Capture.FULL_SCROLL).highlight(findWebElement(driver, locator)).save(SCREENSHOTS_PATH);
-        } catch (Exception e) {
-            LogsUtils.error(e.getMessage());
-
-        }
-
     }
 
 

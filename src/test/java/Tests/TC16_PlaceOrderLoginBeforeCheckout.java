@@ -65,9 +65,7 @@ public class TC16_PlaceOrderLoginBeforeCheckout {
         new P09_CheckOutPage(getDriver()).enterComment().clickOnPlaceOrderButton();
         //TODO: filling payment form and click on pay:
         new P10_PaymentPage(getDriver()).enterNameOnCard().enterCardNum().enterCVC().enterExpMonth().enterExpYear().clickOnPayButton();
-        LogsUtils.info("msg is: "+ new P10_PaymentPage(getDriver()).locateMsg());
-        //assert success msg:
-        Assert.assertTrue(new P10_PaymentPage(getDriver()).verifySuccessMsg());
+                Assert.assertTrue(new P10_PaymentPage(getDriver()).verifySuccessMsg());
         LogsUtils.info("payment is done");
 
 

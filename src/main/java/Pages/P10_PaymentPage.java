@@ -3,8 +3,10 @@ package Pages;
 import Utilities.DataUtils;
 import Utilities.Utility;
 import org.openqa.selenium.*;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Wait;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
@@ -48,19 +50,21 @@ public class P10_PaymentPage {
 
         return new P11_ConfirmPage(driver);
     }
-    public P10_PaymentPage locateMsg(){
-        WebElement successMessage = driver.findElement(successMsg);
-        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", successMessage);
 
-        successMessage.getText();
-
-        return this;
-    }
 
     public Boolean verifySuccessMsg() {
-        Utility.waitForLocator(driver,successMsg);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+
+        // Step 1: Wait for the element to be present in the DOM
+        wait.until(ExpectedConditions.presenceOfElementLocated(successMsg));
+
+        // Step 2: Wait for the element to be visible on the page
+        wait.until(ExpectedConditions.visibilityOfElementLocated(successMsg));
+
+        // At this point, the element should be both present and visible
         return driver.findElement(successMsg).isDisplayed();
     }
+
 
 
 }

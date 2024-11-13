@@ -4,6 +4,7 @@ import Pages.*;
 import Utilities.DataUtils;
 import Utilities.LogsUtils;
 import Utilities.Utility;
+import io.qameta.allure.*;
 import org.testng.Assert;
 import org.testng.annotations.*;
 
@@ -11,6 +12,7 @@ import java.io.IOException;
 import java.time.Duration;
 
 import static DriverFactory.DriverFactory.*;
+import static io.qameta.allure.SeverityLevel.CRITICAL;
 
 public class TC01_RegisterUser {
 
@@ -164,7 +166,24 @@ public class TC01_RegisterUser {
         new P05_DeletePage(getDriver()).clickOnContinueButton();
         Assert.assertTrue(new P05_DeletePage(getDriver()).assertRedirectingToHomePage(getDriver().getCurrentUrl()));
     }
-    @Test(groups = {"register"})
+
+
+
+
+
+
+    @Test(testName = "Register new user",groups = {"register"})
+    @Description("Register new user from scratch")
+    @Owner("Mohamed Adel")
+    @Severity(CRITICAL)
+    @AllureId("1")
+    @Epic("Web interface")
+    @Feature("Register")
+    @Story("Authentication")
+
+
+
+
     public void RegisterUser(){
        //TODO: Entering name and Email
         new P01_HomePage(getDriver())
