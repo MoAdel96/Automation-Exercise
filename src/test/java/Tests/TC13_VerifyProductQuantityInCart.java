@@ -115,7 +115,7 @@ public class TC13_VerifyProductQuantityInCart {
 
 
 
-    @Test
+    @Test(groups = {"Quantity"})
     public void VerifyProductIsDisplayedInCartWithExactQuantity()
     {
         //TODO: Open Products Page:

@@ -2,10 +2,7 @@ package Pages;
 
 import Utilities.DataUtils;
 import Utilities.Utility;
-import org.openqa.selenium.By;
-import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Wait;
 
@@ -52,13 +49,10 @@ public class P10_PaymentPage {
         return new P11_ConfirmPage(driver);
     }
     public P10_PaymentPage locateMsg(){
-        Wait<WebDriver> fluentWait = new FluentWait<>(getDriver())
-                .withTimeout(Duration.ofSeconds(15))
-                .pollingEvery(Duration.ofMillis(500));
+        WebElement successMessage = driver.findElement(successMsg);
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", successMessage);
 
-         fluentWait.until(driver -> driver.findElement(successMsg));
-
-        driver.findElement(successMsg).getText();
+        successMessage.getText();
 
         return this;
     }

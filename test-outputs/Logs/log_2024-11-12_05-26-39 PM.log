@@ -1,0 +1,5 @@
+[INFO] 12-11-2024 17:26:39 [main] [Tests.TC16_PlaceOrderLoginBeforeCheckout.setup(TC16_PlaceOrderLoginBeforeCheckout.java:28)] - Browser was opened
+[INFO] 12-11-2024 17:26:45 [main] [Tests.TC16_PlaceOrderLoginBeforeCheckout.setup(TC16_PlaceOrderLoginBeforeCheckout.java:30)] -  Browser is redirected to the HOME URL
+[INFO] 12-11-2024 17:26:47 [main] [Tests.TC16_PlaceOrderLoginBeforeCheckout.placeOrder(TC16_PlaceOrderLoginBeforeCheckout.java:40)] - Login page is opened successfully
+[INFO] 12-11-2024 17:26:52 [main] [Tests.TC16_PlaceOrderLoginBeforeCheckout.placeOrder(TC16_PlaceOrderLoginBeforeCheckout.java:47)] - Current URL is: https://automationexercise.com/products
+[INFO] 12-11-2024 17:26:56 [main] [Tests.TC16_PlaceOrderLoginBeforeCheckout.placeOrder(TC16_PlaceOrderLoginBeforeCheckout.java:58)] - product is displayed

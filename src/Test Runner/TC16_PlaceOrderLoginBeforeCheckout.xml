@@ -1,0 +1,24 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.1.dtd" >
+<suite name="Order">
+
+    <listeners>
+        <listener class-name="Listeners.ITestResultListenerClass"/>
+        <listener class-name="Listeners.IInvokedMethodListenerClass"/>
+    </listeners>
+
+
+    <test name="products">
+        <groups>
+            <define name="order"/>
+            <run>
+
+                <include name="order"/>
+            </run>
+        </groups>
+
+
+        <classes>
+            <class name="Tests.TC16_PlaceOrderLoginBeforeCheckout"/>
+        </classes>
+    </test>
+</suite>

@@ -31,7 +31,7 @@ public class TC16_PlaceOrderLoginBeforeCheckout {
         getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
     }
 
-    @Test
+    @Test(groups = {"order"})
 
     public void placeOrder() {
 

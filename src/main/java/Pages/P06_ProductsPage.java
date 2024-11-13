@@ -59,7 +59,7 @@ public class P06_ProductsPage {
     }
 
     public Boolean VerifyProductNameIsWritten() {
-        return driver.findElement(searchField).getText().equals("men");
+        return driver.getCurrentUrl().equals("https://automationexercise.com/products?search=men");
     }
 
     public List<WebElement> VerifySearchResults() {

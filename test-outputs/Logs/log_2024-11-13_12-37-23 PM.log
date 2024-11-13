@@ -1,0 +1,14 @@
+[INFO] 13-11-2024 12:37:23 [main] [Tests.TC09_SearchProduct.setup(TC09_SearchProduct.java:24)] - Browser was opened
+[INFO] 13-11-2024 12:37:30 [main] [Tests.TC09_SearchProduct.setup(TC09_SearchProduct.java:26)] -  Browser is redirected to the HOME URL
+[INFO] 13-11-2024 12:37:30 [main] [Listeners.ITestResultListenerClass.onTestStart(ITestResultListenerClass.java:9)] -  Test Case openHomePage started
+[INFO] 13-11-2024 12:37:30 [main] [Tests.TC09_SearchProduct.openHomePage(TC09_SearchProduct.java:36)] - Home page is opened successfully
+[INFO] 13-11-2024 12:37:30 [main] [Listeners.ITestResultListenerClass.onTestSuccess(ITestResultListenerClass.java:14)] -  Test Case openHomePage Passed 
+[INFO] 13-11-2024 12:37:31 [main] [Listeners.ITestResultListenerClass.onTestStart(ITestResultListenerClass.java:9)] -  Test Case clickOnProductsButton started
+[INFO] 13-11-2024 12:37:35 [main] [Tests.TC09_SearchProduct.clickOnProductsButton(TC09_SearchProduct.java:43)] - Current URL is: https://automationexercise.com/products
+[INFO] 13-11-2024 12:37:35 [main] [Listeners.ITestResultListenerClass.onTestSuccess(ITestResultListenerClass.java:14)] -  Test Case clickOnProductsButton Passed 
+[INFO] 13-11-2024 12:37:35 [main] [Listeners.ITestResultListenerClass.onTestStart(ITestResultListenerClass.java:9)] -  Test Case enterProductName started
+[INFO] 13-11-2024 12:37:35 [main] [Listeners.IInvokedMethodListenerClass.afterInvocation(IInvokedMethodListenerClass.java:35)] -  Test Case enterProductName Failed 
+[INFO] 13-11-2024 12:37:35 [main] [Listeners.ITestResultListenerClass.onTestStart(ITestResultListenerClass.java:9)] -  Test Case clickOnSearchButton started
+[INFO] 13-11-2024 12:37:35 [main] [Listeners.ITestResultListenerClass.onTestSkipped(ITestResultListenerClass.java:20)] -  Test Case clickOnSearchButton Skipped 
+[INFO] 13-11-2024 12:37:35 [main] [Listeners.ITestResultListenerClass.onTestStart(ITestResultListenerClass.java:9)] -  Test Case searchForProducts started
+[INFO] 13-11-2024 12:37:35 [main] [Listeners.ITestResultListenerClass.onTestSkipped(ITestResultListenerClass.java:20)] -  Test Case searchForProducts Skipped 

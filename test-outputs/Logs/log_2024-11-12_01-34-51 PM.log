@@ -1,0 +1,5 @@
+[INFO] 12-11-2024 13:34:51 [main] [Tests.TC13_VerifyProductQuantityInCart.setup(TC13_VerifyProductQuantityInCart.java:32)] - Browser was opened
+[INFO] 12-11-2024 13:34:56 [main] [Tests.TC13_VerifyProductQuantityInCart.setup(TC13_VerifyProductQuantityInCart.java:34)] -  Browser is redirected to the HOME URL
+[INFO] 12-11-2024 13:34:59 [main] [Tests.TC13_VerifyProductQuantityInCart.VerifyAllProductsAndProductDetailPage(TC13_VerifyProductQuantityInCart.java:53)] - Current URL is: https://automationexercise.com/products
+[INFO] 12-11-2024 13:35:02 [main] [Tests.TC13_VerifyProductQuantityInCart.VerifyAllProductsAndProductDetailPage(TC13_VerifyProductQuantityInCart.java:67)] - product is displayed
+[INFO] 12-11-2024 13:35:02 [main] [Tests.TC13_VerifyProductQuantityInCart.VerifyAllProductsAndProductDetailPage(TC13_VerifyProductQuantityInCart.java:69)] - Quantity is right

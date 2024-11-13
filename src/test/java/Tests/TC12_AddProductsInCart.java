@@ -192,7 +192,7 @@ public class TC12_AddProductsInCart {
 
     }
 
-    @Test
+    @Test(groups = {"addToCart"})
     public void addToCart() {
         //TODO: Open Products Page:
         new P01_HomePage(getDriver()).clickOnProductsButton();

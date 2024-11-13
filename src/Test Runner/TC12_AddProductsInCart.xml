@@ -1,0 +1,29 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.1.dtd" >
+<suite name="Order">
+
+    <listeners>
+        <listener class-name="Listeners.ITestResultListenerClass"/>
+        <listener class-name="Listeners.IInvokedMethodListenerClass"/>
+    </listeners>
+
+
+    <test name="products">
+
+        <groups>
+            <define name="addToCart"/>
+        </groups>
+
+
+        <classes>
+            <class name="Tests.TC12_AddProductsInCart">
+                <methods>
+                    <include name="addToCart"/>
+                </methods>
+            </class>
+            
+
+        </classes>
+
+
+    </test>
+</suite>
