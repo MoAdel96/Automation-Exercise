@@ -24,7 +24,10 @@ public class TC16_PlaceOrderLoginBeforeCheckout {
     private Set<Cookie> cookies;
 
 
-    @BeforeClass
+
+
+
+    @BeforeClass(alwaysRun = true)
     public void login() throws IOException {
         setupDriver(DataUtils.getJsonData("environment", "Browser"));
         LogsUtils.info("Browser was opened");
@@ -43,7 +46,7 @@ public class TC16_PlaceOrderLoginBeforeCheckout {
 
     }
 
-    @BeforeMethod
+    @BeforeMethod(alwaysRun = true)
     public void setup(){
         setupDriver(DataUtils.getJsonData("environment", "Browser"));
         LogsUtils.info("Browser was opened");
@@ -55,7 +58,7 @@ public class TC16_PlaceOrderLoginBeforeCheckout {
     }
 
 
-    @Test(groups = {"order"}, testName = "place Order")
+    @Test(groups = {"placeOrder"}, testName = "place Order")
     @Description("create order")
     @Owner("Mohamed Adel")
     @Severity(CRITICAL)
@@ -102,8 +105,9 @@ public class TC16_PlaceOrderLoginBeforeCheckout {
         quitDriver();
     }
 
-    @AfterClass
+    @AfterClass(alwaysRun = true)
     public void deleteSession (){
         cookies.clear();
     }
-}
+
+    }
