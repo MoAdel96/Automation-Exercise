@@ -7,6 +7,7 @@ import Pages.P08_CartPage;
 import Utilities.DataUtils;
 import Utilities.LogsUtils;
 import Utilities.Utility;
+import io.qameta.allure.*;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -16,6 +17,7 @@ import java.io.IOException;
 import java.time.Duration;
 
 import static DriverFactory.DriverFactory.*;
+import static io.qameta.allure.SeverityLevel.CRITICAL;
 
 public class TC13_VerifyProductQuantityInCart {
     //to Get dynamic Credential from json file:
@@ -115,7 +117,14 @@ public class TC13_VerifyProductQuantityInCart {
 
 
 
-    @Test(groups = {"Quantity"})
+    @Test(groups = {"Quantity"},testName = "Verify Product Is Displayed In Cart With Exact Quantity ")
+    @Description("Verify Product Is Displayed In Cart With Exact Quantity")
+    @Owner("Mohamed Adel")
+    @Severity(CRITICAL)
+    @AllureId("13")
+    @Epic("Web interface")
+    @Feature("cart")
+    @Story("Order")
     public void VerifyProductIsDisplayedInCartWithExactQuantity()
     {
         //TODO: Open Products Page:

@@ -5,6 +5,10 @@ import Pages.P06_ProductsPage;
 import Utilities.DataUtils;
 import Utilities.LogsUtils;
 import Utilities.Utility;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Owner;
+import io.qameta.allure.Severity;
+import io.qameta.allure.Story;
 import org.testng.Assert;
 import org.testng.annotations.*;
 
@@ -12,6 +16,7 @@ import java.io.IOException;
 import java.time.Duration;
 
 import static DriverFactory.DriverFactory.*;
+import static io.qameta.allure.SeverityLevel.CRITICAL;
 
 public class TC09_SearchProduct {
     //to Get dynamic Credential from json file:
@@ -28,6 +33,10 @@ public class TC09_SearchProduct {
     }
 
     @Test(groups = {"search"})
+    @Owner("Mohamed Adel")
+    @Severity(CRITICAL)
+    @Feature("Search")
+    @Story("Search")
     public void openHomePage() {
         // Go to home page
         new P01_HomePage(getDriver());
@@ -37,6 +46,10 @@ public class TC09_SearchProduct {
     }
 
     @Test(groups = {"search"}, dependsOnMethods = {"openHomePage"})
+    @Owner("Mohamed Adel")
+    @Severity(CRITICAL)
+    @Feature("Search")
+    @Story("Search")
     public void clickOnProductsButton() {
         // Open Products Page
         new P01_HomePage(getDriver()).clickOnProductsButton();
@@ -47,6 +60,10 @@ public class TC09_SearchProduct {
     }
 
     @Test(groups = {"search"}, dependsOnMethods = {"clickOnProductsButton"})
+    @Owner("Mohamed Adel")
+    @Severity(CRITICAL)
+    @Feature("Search")
+    @Story("Search")
     public void enterProductName() {
         // Entering Product Name
         new P06_ProductsPage(getDriver()).enterProductName();
@@ -54,6 +71,10 @@ public class TC09_SearchProduct {
     }
 
     @Test(groups = {"search"}, dependsOnMethods = {"enterProductName"})
+    @Owner("Mohamed Adel")
+    @Severity(CRITICAL)
+    @Feature("Search")
+    @Story("Search")
     public void clickOnSearchButton() {
         // Enter Product Name and click on search button
         new P06_ProductsPage(getDriver()).clickOnSearchButton();
@@ -62,6 +83,10 @@ public class TC09_SearchProduct {
     }
 
     @Test(groups = {"search"}, dependsOnMethods = {"clickOnSearchButton"})
+    @Owner("Mohamed Adel")
+    @Severity(CRITICAL)
+    @Feature("Search")
+    @Story("Search")
     public void searchForProducts() {
         // Search for Products and verify results
         Assert.assertFalse(new P06_ProductsPage(getDriver()).VerifySearchResults().isEmpty());

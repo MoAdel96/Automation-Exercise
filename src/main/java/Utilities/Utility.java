@@ -22,7 +22,7 @@ import static com.codeborne.selenide.Selenide.$;
 
 public class Utility {
 
-    private static final String SCREENSHOTS_PATH = "test-outputs/Screenshots/";
+    private static final String SCREENSHOTS_PATH = "src/test-outputs/Screenshots/";
 
     public static void clickingOnElement(WebDriver driver, By locator) {
         new WebDriverWait(driver, Duration.ofSeconds(5))

@@ -4,6 +4,7 @@ import Pages.P01_HomePage;
 import Pages.P02_LoginPage;
 import Utilities.DataUtils;
 import Utilities.LogsUtils;
+import io.qameta.allure.*;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -13,6 +14,7 @@ import java.io.IOException;
 import java.time.Duration;
 
 import static DriverFactory.DriverFactory.*;
+import static io.qameta.allure.SeverityLevel.CRITICAL;
 
 public class TC03_LoginUserWithIncorrectEmailAndPassword {
 
@@ -33,7 +35,14 @@ public class TC03_LoginUserWithIncorrectEmailAndPassword {
             getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         }
 
-        @Test(groups = {"invalidLogin"})
+        @Test(groups = {"invalidLogin"},testName = "invalid login")
+        @Description("Login User With In Correct Email And Password ")
+        @Owner("Mohamed Adel")
+        @Severity(CRITICAL)
+        @AllureId("3")
+        @Epic("Web interface")
+        @Feature("Login")
+        @Story("Login")
         public void LoginUserWithInCorrectEmailAndPassword(){
             //TODO:Go to Login page
             new P01_HomePage(getDriver()).clickOnSignUpLoginButton();

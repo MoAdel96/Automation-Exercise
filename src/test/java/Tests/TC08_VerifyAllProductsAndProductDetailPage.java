@@ -5,6 +5,7 @@ import Pages.P06_ProductsPage;
 import Pages.P07_ProductDetailsPage;
 import Utilities.DataUtils;
 import Utilities.LogsUtils;
+import io.qameta.allure.*;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -14,6 +15,7 @@ import java.io.IOException;
 import java.time.Duration;
 
 import static DriverFactory.DriverFactory.*;
+import static io.qameta.allure.SeverityLevel.CRITICAL;
 
 public class TC08_VerifyAllProductsAndProductDetailPage {
     //to Get dynamic Credential from json file:
@@ -53,7 +55,14 @@ public class TC08_VerifyAllProductsAndProductDetailPage {
     }
 
 
-        @Test(groups = {"TC08"})
+        @Test(groups = {"TC08"},testName = "Verify All Products And Product Detail Page")
+        @Description("Verify All Products And Product Detail Page")
+        @Owner("Mohamed Adel")
+        @Severity(CRITICAL)
+        @AllureId("8")
+        @Epic("Web interface")
+        @Feature("products page")
+        @Story("Products")
     public void VerifyAllProductsAndProductDetailPage ()
     {
         //TODO: Open Products Page:

@@ -7,6 +7,7 @@ import Pages.P08_CartPage;
 import Utilities.DataUtils;
 import Utilities.LogsUtils;
 import Utilities.Utility;
+import io.qameta.allure.*;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -16,6 +17,7 @@ import java.io.IOException;
 import java.time.Duration;
 
 import static DriverFactory.DriverFactory.*;
+import static io.qameta.allure.SeverityLevel.CRITICAL;
 
 public class TC12_AddProductsInCart {
     //to Get dynamic Credential from json file:
@@ -192,7 +194,14 @@ public class TC12_AddProductsInCart {
 
     }
 
-    @Test(groups = {"addToCart"})
+    @Test(groups = {"addToCart"},testName = "Add To Cart")
+    @Description("Add products to cart")
+    @Owner("Mohamed Adel")
+    @Severity(CRITICAL)
+    @AllureId("12")
+    @Epic("Web interface")
+    @Feature("Cart")
+    @Story("Order")
     public void addToCart() {
         //TODO: Open Products Page:
         new P01_HomePage(getDriver()).clickOnProductsButton();

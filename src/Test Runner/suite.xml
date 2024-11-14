@@ -1,0 +1,53 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.1.dtd" >
+<suite name="Suite">
+
+    <listeners>
+        <listener class-name="Listeners.ITestResultListenerClass"/>
+        <listener class-name="Listeners.IInvokedMethodListenerClass"/>
+    </listeners>
+
+
+    <test name="suit">
+
+        <classes>
+            
+            <class name="Tests.TC01_RegisterUser">
+                <methods>
+                    <include name="RegisterUser"/>
+                </methods>
+            </class>
+            <class name="Tests.TC02_LoginUserWithCorrectEmailAndPassword">
+                <methods>
+                    <include name="LoginUserWithCorrectEmailAndPassword"/>
+                </methods>
+            </class>
+            <class name="Tests.TC03_LoginUserWithIncorrectEmailAndPassword">
+                <methods>
+                    <include name="LoginUserWithInCorrectEmailAndPassword"/>
+                </methods>
+            </class>
+            <class name="Tests.TC08_VerifyAllProductsAndProductDetailPage">
+                <methods>
+                    <include name="VerifyAllProductsAndProductDetailPage"/>
+                </methods>
+            </class>
+            <class name="Tests.TC09_SearchProduct">
+            </class>
+            <class name="Tests.TC12_AddProductsInCart">
+                <methods>
+                    <include name="addToCart"/>
+                </methods>
+            </class>
+            <class name="Tests.TC13_VerifyProductQuantityInCart">
+                <methods>
+                    <include name="VerifyProductIsDisplayedInCartWithExactQuantity"/>
+                </methods>
+            </class>
+            <class name="Tests.TC16_PlaceOrderLoginBeforeCheckout">
+
+            </class>
+            <class name="Tests.TC18_ViewCategoryProducts">
+            </class>
+        </classes>
+    </test>
+</suite>
